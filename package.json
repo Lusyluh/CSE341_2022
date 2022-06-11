@@ -1,0 +1,23 @@
+{
+  "name": "package.json",
+  "version": "1.0.0",
+  "description": "Backend II",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lusyluh/CSE341_2022.git"
+  },
+  "author": "Lusanda Mavuma",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Lusyluh/CSE341_2022/issues"
+  },
+  "homepage": "https://github.com/Lusyluh/CSE341_2022#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
