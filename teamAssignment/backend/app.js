@@ -10,7 +10,7 @@ const port = process.env.PORT || 8080;
 const app = express();
 
 //connects to the routes
-app.use('/', require('./routes'))
+app.use('/', require('./routes'));
 
 // Configuring body parser middleware
 // app.use(bodyParser.urlencoded({ extended: false }));
@@ -23,7 +23,6 @@ app.use('/', require('./routes'))
     next();
   })
   app.use('/professional', professionalRoutes);
-
 mongodb.initDb((err, mongodb) => {
   if (err) {
     console.log(err);
@@ -32,6 +31,3 @@ mongodb.initDb((err, mongodb) => {
     console.log(`Connected to DB and listening on ${port}`);
   }
 });
-app.listen(port, () => {
-    console.log(`REST API app running on port ${port}`)
-})
