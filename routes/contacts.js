@@ -1,5 +1,5 @@
 const routes = require('express').Router();
-const contactsController = require('../controllers/');
+const contactsController = require('../controllers/contacts');
 
 routes.get('/', contactsController.getDocuments);
 routes.get('/:id', contactsController.getSingle);
