@@ -8,4 +8,17 @@ GET http://localhost:3000/contacts/62a7ec723a0c62fb9986cbff
 ###
 GET  http://localhost:3000/contacts/62a7ec723a0c62fb9986cc00
 
+###
+GET https://cse341server-22.herokuapp.com/contacts
+
+###
+###
+GET https://cse341server-22.herokuapp.com/contacts/62a7ec723a0c62fb9986cbfe
+###
+GET https://cse341server-22.herokuapp.com/contacts/62a7ec723a0c62fb9986cbff
+###
+GET https://cse341server-22.herokuapp.com/contacts/62a7ec723a0c62fb9986cc00
+
+
+
  
