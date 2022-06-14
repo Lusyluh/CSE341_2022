@@ -1,0 +1,22 @@
+{"ontact" :{
+    "firstName":"Mpho",
+    "lastName": "Frank",
+    "email": "mphofrank@gmail.com",
+    "favouriteColour":"red",
+    "birthday": "05/06/90"
+    },
+"contact2" :{
+    "firstName":"Pinky",
+    "lastName": "Magadla",
+    "email": "magadlapink@gmail.com",
+    "favouriteColour":"Pink",
+    "birthday": "29/11/92"
+    },
+"contact3" :{
+    "firstName":"Mila",
+    "lastName": "Mavuma",
+    "email": "luhh1973@gmail.com",
+    "favouriteColour":"Purple",
+    "birthday": "26/10/2017"
+    }
+}
