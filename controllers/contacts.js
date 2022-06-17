@@ -28,4 +28,25 @@ const getSingle = async (req, res, next) => {
     res.status(200).json(lists[0]);
   });
 };
-module.exports = {getDocuments, getSingle};
+
+//add a new conacts on the list 
+const addContact = async (req, res) => {
+  const newContact = {
+    firstName : "Mtunzi",
+    lastName : "Mavuma",
+    email : "mtunzi@gmail.com",
+    favoriteColor : "grey",
+    birthday : "15/10/1989"
+  }
+  const result = await mongodb.getDb().db('lesson2').collection('contacts').insertOne(newContact);
+  console.log('New contact created with the following id: ${result.objectId}');
+  // insertOne(res.body,(err,data) => {
+  //   if(err) {
+  //     return result.status(500).send(err);
+  //     }
+  // response.send(result.result);
+  // });
+};
+
+
+module.exports = {getDocuments, getSingle, addContact};
