@@ -30,23 +30,14 @@ const getSingle = async (req, res, next) => {
 };
 
 //add a new conacts on the list 
-const addContact = async (req, res) => {
-  const newContact = {
-    firstName : "Mtunzi",
-    lastName : "Mavuma",
-    email : "mtunzi@gmail.com",
-    favoriteColor : "grey",
-    birthday : "15/10/1989"
-  }
-  const result = await mongodb.getDb().db('lesson2').collection('contacts').insertOne(newContact);
-  console.log('New contact created with the following id: ${result.objectId}');
-  // insertOne(res.body,(err,data) => {
-  //   if(err) {
-  //     return result.status(500).send(err);
-  //     }
-  // response.send(result.result);
-  // });
+const addContact = async (request, response) => {
+  const result = await mongodb.getDb().db('lesson2').collection('contacts').insertOne(request.body, (error, result) => {
+    if(error) {
+        return response.status(500).send(error);
+    }
+    response.send(result);
+    console.log(result);
+  });
 };
-
 
 module.exports = {getDocuments, getSingle, addContact};

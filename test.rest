@@ -1,7 +1,17 @@
 //localhost
 GET http://localhost:3000/contacts
+###create new contact
+POST http://localhost:3000/contacts HTTP/1.1
+content-type:application/json
+
+{
+    "firstName": "Steven",
+    "lastName": "Mavuma",
+    "email": "mtunzi@gmail.com",
+    "favoriteColor": "grey",
+    "birthday": "15/10/1989"
+  }
 ###
-//try this
 GET http://localhost:3000/contacts/62a7ec723a0c62fb9986cbfe
 ###
 GET http://localhost:3000/contacts/62a7ec723a0c62fb9986cbff
