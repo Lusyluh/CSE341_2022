@@ -33,8 +33,11 @@ const getSingle = async (req, res, next) => {
 const addContact = async (request, response) => {
   const result = await mongodb.getDb().db('lesson2').collection('contacts').insertOne(request.body, (error, result) => {
     if(error) {
-        return response.status(500).send(error);
+        return response.status(500).send(error || 'Contact not added');
+    }else{
+      return response.status(201).json(result);
     }
+    
     response.send(result);
     console.log(result);
   });
@@ -43,10 +46,15 @@ const addContact = async (request, response) => {
 //function to update a contact. 
 //This route should allow for a url similar to this: api-url-path/contacts/id-to-modify
 
-const updateContact = async (req, res) =>{
-  const contId = new ObjectId(req.params.ObjectId);
-  const result = await mongodb.getDb().db('lesson2').collection('contacts').replaceOne({ _id: contId }, request.body)
-  res.send(result);
+const updateContact = async (req, res) => {
+  const contId = new ObjectId(req.params.id);
+  const result = await mongodb.getDb().db('lesson2').collection('contacts').replaceOne({ _id: contId },req.body);
+  if (result.modifiedCount > 0) {
+    res.status(204).send();
+  } else {
+    res.status(500).json(result.error || 'Error occurred while updating the contact.');
+  }
+ 
   console.log(result);
 };
 

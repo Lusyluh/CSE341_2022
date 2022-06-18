@@ -5,21 +5,22 @@ POST http://localhost:3000/contacts HTTP/1.1
 content-type:application/json
 
 {
-    "firstName": "Steven",
-    "lastName": "Mavuma",
-    "email": "mtunzi@gmail.com",
-    "favoriteColor": "grey",
-    "birthday": "15/10/1989"
+    "firstName": "Nozi",
+    "lastName": "Marcia",
+    "email": "marcia@gmail.com",
+    "favoriteColor": "blue",
+    "birthday": "22/09/1979"
   }
+
 ###Update contact
-PUT http://localhost:3000/contacts HTTP/1.1
+PUT http://localhost:3000/contacts/62ad72bd9c9b7311df369720 HTTP/1.1
 content-type:application/json
 
 {
     "firstName": "Steven",
     "lastName": "Mavuma",
-    "email": "mtunzism@gmail.com",
-    "favoriteColor": "grey",
+    "email": "yellow@gmail.com",
+    "favoriteColor": "yellow",
     "birthday": "15/10/1989"
   }
 
