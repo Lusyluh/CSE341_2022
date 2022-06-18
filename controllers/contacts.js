@@ -29,7 +29,7 @@ const getSingle = async (req, res, next) => {
   });
 };
 
-//add a new conacts on the list 
+//add a new contact to the the database
 const addContact = async (request, response) => {
   const result = await mongodb.getDb().db('lesson2').collection('contacts').insertOne(request.body, (error, result) => {
     if(error) {
@@ -40,4 +40,14 @@ const addContact = async (request, response) => {
   });
 };
 
-module.exports = {getDocuments, getSingle, addContact};
+//function to update a contact. 
+//This route should allow for a url similar to this: api-url-path/contacts/id-to-modify
+
+const updateContact = async (req, res) =>{
+  const contId = new ObjectId(req.params.ObjectId);
+  const result = await mongodb.getDb().db('lesson2').collection('contacts').replaceOne({ _id: contId }, request.body)
+  res.send(result);
+  console.log(result);
+};
+
+module.exports = {getDocuments, getSingle, addContact, updateContact};
