@@ -1,5 +1,6 @@
-//localhost
+//localhost STARTS HERE
 GET http://localhost:3000/contacts
+
 ###create new contact
 POST http://localhost:3000/contacts HTTP/1.1
 content-type:application/json
@@ -35,7 +36,7 @@ GET http://localhost:3000/contacts/62a7ec723a0c62fb9986cbff
 ###
 GET  http://localhost:3000/contacts/62a7ec723a0c62fb9986cc00
 
-###
+###PRODUCTION STARTS HERE
 GET https://cse341server-22.herokuapp.com/contacts
 
 ###
@@ -47,5 +48,29 @@ GET https://cse341server-22.herokuapp.com/contacts/62a7ec723a0c62fb9986cbff
 GET https://cse341server-22.herokuapp.com/contacts/62a7ec723a0c62fb9986cc00
 
 
+###create new contact
+POST https://cse341server-22.herokuapp.com/contacts HTTP/1.1
+content-type:application/json
 
+{
+    "firstName": "Nozi",
+    "lastName": "Marcia",
+    "email": "marcia@gmail.com",
+    "favoriteColor": "blue",
+    "birthday": "22/09/1979"
+  }
  
+###Update contact
+PUT https://cse341server-22.herokuapp.com/contacts/62ad72bd9c9b7311df369720 HTTP/1.1
+content-type:application/json
+
+{
+    "firstName": "Steven",
+    "lastName": "Mavuma",
+    "email": "yellow@gmail.com",
+    "favoriteColor": "yellow",
+    "birthday": "15/10/1989"
+  }
+
+###delete contact
+DELETE https://cse341server-22.herokuapp.com/contacts/62ad45d5e0aba741001295e4 HTTP/1.1
