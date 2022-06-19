@@ -61,7 +61,7 @@ content-type:application/json
   }
  
 ###Update contact
-PUT https://cse341server-22.herokuapp.com/contacts/62ad72bd9c9b7311df369720 HTTP/1.1
+PUT https://cse341server-22.herokuapp.com/contacts/62ae700f57d8f789c92f6183 HTTP/1.1
 content-type:application/json
 
 {
@@ -73,4 +73,4 @@ content-type:application/json
   }
 
 ###delete contact
-DELETE https://cse341server-22.herokuapp.com/contacts/62ad45d5e0aba741001295e4 HTTP/1.1
+DELETE https://cse341server-22.herokuapp.com/contacts/62ae700f57d8f789c92f6183 HTTP/1.1
