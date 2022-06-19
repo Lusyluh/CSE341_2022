@@ -37,7 +37,7 @@ const addContact = async (request, response) => {
     }else{
       return response.status(201).json(result);
     }
-    
+
     response.send(result);
     console.log(result);
   });
@@ -55,7 +55,19 @@ const updateContact = async (req, res) => {
     res.status(500).json(result.error || 'Error occurred while updating the contact.');
   }
  
-  console.log(result);
+ console.log(`${result.modifiedCount} document(s) was updated.`)
 };
 
-module.exports = {getDocuments, getSingle, addContact, updateContact};
+//DELETE a contact and return status code representing success
+const deleteContact = async (req, res) => {
+  const contId = new ObjectId(req.params.id);
+  const result = await mongodb.getDb().db('lesson2').collection('contacts').deleteOne({ _id: contId }, true);
+  if (result.deletedCount === 1){
+    res.status(200).send();
+    console.log("Successfully deleted one document.");
+  }else{
+    res.status(500).json(result.error || 'No documents matched the query. Deleted 0 documents.')
+  }
+};
+
+module.exports = {getDocuments, getSingle, addContact, updateContact, deleteContact};

@@ -24,6 +24,10 @@ content-type:application/json
     "birthday": "15/10/1989"
   }
 
+###delete contact
+DELETE http://localhost:3000/contacts/62ad45d5e0aba741001295e4 HTTP/1.1
+
+
 ###
 GET http://localhost:3000/contacts/62a7ec723a0c62fb9986cbfe
 ###
