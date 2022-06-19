@@ -53,7 +53,7 @@ POST https://cse341server-22.herokuapp.com/contacts HTTP/1.1
 content-type:application/json
 
 {
-    "firstName": "Nozi",
+    "firstName": "Nozibele",
     "lastName": "Marcia",
     "email": "marcia@gmail.com",
     "favoriteColor": "blue",
