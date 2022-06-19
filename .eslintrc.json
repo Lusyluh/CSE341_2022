@@ -9,5 +9,10 @@
         "ecmaVersion": "latest"
     },
     "rules": {
+        "func-names":"off",
+        "no-process-exit":"off",
+        "no-process-env":"off",
+        "object-shorthand":"off"
+
     }
 }
