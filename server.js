@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require('cors')
 const mongodb = require('./db/connect');
 const bodyParser = require('body-parser');
 
@@ -9,6 +10,8 @@ const app = express();
 const swaggerUi = require('swagger-ui-express');
 const swaggerDocument = require('./swagger-output.json');
 
+//enabling CORS for all requests
+app.use(cors())
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 app
@@ -24,6 +27,6 @@ mongodb.initDb((err, mongodb) => {
     console.log(err);
   } else {
     app.listen(port);
-    console.log(`Connected to DB and listening on ${port}`);
+    console.log(`Connected to DB, Cors enabled and listening on ${port}`);
   }
 });
