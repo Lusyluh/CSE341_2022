@@ -6,7 +6,18 @@ const doc = {
     description: 'Description',
   },
   host: 'localhost:3000',
-  schemes: ['http'],
+  schemes: ['http','https'],
+  consumes:['application/json'],
+  produces: ['application/json'],
+  definitions:{
+    contact:{
+      firstName:"Happiness",
+      lastName:"Magadla",
+      email:"happiness@gmail.com",
+      favoriteColor:"Maroon",
+      birthday:"22/06/2022"
+    }
+  }
 };
 const outputFile = './swagger-output.json';
 const endpointsFiles = ['./routes/index.js'];
