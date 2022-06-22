@@ -31,9 +31,13 @@ const getSingle = async (req, res, next) => {
 };
 
 //add a new contact to the the database
-const addContact = async (request, response) => {
+const addContact = async (req, response) => {
   const contact = {
-    firstName: request.body.firstName
+    firstName: req.body.firstName,
+    lastName: req.body.lastName,
+    email: req.body.email,
+    favoriteColor: req.body.favoriteColor,
+    birthday:req.body.birthday
   };
   const result = await mongodb.getDb().db('lesson2').collection('contacts').insertOne(contact);
   if (result.acknowledged) {
@@ -48,9 +52,16 @@ const addContact = async (request, response) => {
 
 const updateContact = async (req, res) => {
   const contId = new ObjectId(req.params.id);
+  const contact = {
+    firstName: req.body.firstName,
+    lastName: req.body.lastName,
+    email: req.body.email,
+    favoriteColor: req.body.favoriteColor,
+    birthday:req.body.birthday
+  };
   const result = await mongodb.getDb().db('lesson2').collection('contacts').replaceOne({
     _id: contId
-  }, req.body);
+  }, contact);
   if (result.modifiedCount > 0) {
     res.status(204).send();
   } else {
