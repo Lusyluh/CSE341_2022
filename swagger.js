@@ -5,8 +5,8 @@ const doc = {
     title: 'My API',
     description: 'Description',
   },
-  host: 'localhost:3000',
-  schemes: ['http','https'],
+  host: 'cse341server-22.herokuapp.com',
+  schemes: ['https'],
   consumes:['application/json'],
   produces: ['application/json'],
   definitions:{

@@ -5,10 +5,9 @@
     "description": "Description",
     "version": "1.0.0"
   },
-  "host": "https://cse341server-22.herokuapp.com",
+  "host": "cse341server-22.herokuapp.com",
   "basePath": "/",
   "schemes": [
-    "http",
     "https"
   ],
   "consumes": [
@@ -27,6 +26,13 @@
             "description": "OK"
           }
         }
+      }
+    },
+    "/api-docs": {
+      "get": {
+        "description": "",
+        "parameters": [],
+        "responses": {}
       }
     },
     "/contacts/": {
